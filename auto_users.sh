@@ -16,7 +16,7 @@ for username in $usernames; do
       echo "User $username already exists, skipping..."
    else
       # Create the user account
-      useradd -m "$username"
+      useradd -G clients "$username"
       echo "User $username created"
    fi
 done

@@ -14,7 +14,7 @@ while read -r line; do
    # Check if the user exists
    if id "$username" >/dev/null 2>&1; then
       # Change the user's password
-      echo "username:newpassword" | chpasswd
+      echo "$username:$password" | chpasswd
       echo "Password for user $username changed"
    else
       echo "User $username does not exist, skipping..."
